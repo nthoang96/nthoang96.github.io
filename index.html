@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title> 🇻🇳 Random food v1.0.0 🇻🇳 </title>
 </head>
 <body>
     <div class='container'>
-        <div id='title'>
-            <h1>🇻🇳 Random food v1.0.0 🇻🇳</h1>
-        </div>
-        <div id='box'>
-            <input type="text" name="enter-food" id="enter-food">
-            <input type="button" name="random" id="random" value="Random now!">
+        <div class="wrap-content">
+            <div id='title'>
+                <h1>🇻🇳 Random food v1.0.0 🇻🇳</h1>
+            </div>
+            <div id='box'>
+                <div class="wrap-input">
+                    <div class='placeholder' id='placeholder'>Chè, sôi, gà, ....</div>
+                    <div role="textbox" contenteditable="true" spellcheck="true" aria-describedby="placeholder" id='inpFood'></div>
+                </div>
+                <div class="wrap-button">
+                    <div class="disabled" role="button" id="randomBtn">Random now!</div>
+                </div>
+            </div>
         </div>
     </div>
+    <div id="blocker"></div>
+    <div id='result-popup'>
+        <div id="icon-button">🍅</div>
+        <img />
+        <h1 id='result-target'></h1>
+    </div>
+    <script src="./app.js"></script>
 </body>
 </html>

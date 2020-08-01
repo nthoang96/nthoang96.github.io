@@ -1,0 +1,212 @@
+body {
+  background-color: #18191a;
+  color: #fff;
+  font-family: ubuntu;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #242526;
+}
+
+.wrap-content {
+  border: 0.5px solid #3e4042;
+  border-radius: 8px;
+  margin: 15px;
+}
+
+#title {
+  text-align: center;
+}
+
+#box {
+  display: flex;
+  flex-direction: column;
+}
+
+#enter-food {
+  margin: 10px;
+  height: 30px;
+  border-radius: 8px;
+
+}
+
+.placeholder {
+  color: #90949c;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 50px;
+}
+
+.wrap-input {
+  font-size: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: block;
+  cursor: text;
+  pointer-events: all;
+}
+
+[role=textbox] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  z-index: 1;
+}
+
+[role=textbox]:focus {
+  outline: none;
+}
+
+.wrap-button {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: space-between;
+  padding: 16px 16px 16px 16px;
+  align-items: center;
+  pointer-events: all;
+}
+
+[role=button] {
+  padding: 10px;
+  position: relative;
+  min-width: 100%;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: inline-flex;
+  border-radius: 6px;
+  background-color: #2D88FF;
+}
+
+[role=button]:hover {
+  cursor: pointer;
+  background-color: #84b0ff;
+}
+
+[role=button].disabled {
+  background-color: #484a4d;
+  color: #90949c;
+  pointer-events: none;
+}
+
+#result-popup {
+  outline: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#blocker {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+}
+
+#blocker.open {
+  transform: translate(0%, 0%) scale(1);
+  position: absolute;
+}
+
+#blocker.close {
+  transform: translate(0%, 0%) scale(0);
+}
+
+#icon-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #484a4d;
+  padding: 5px;
+  margin: 2px;
+  position: absolute;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#icon-button:hover {
+  background-color: #484a4d;
+}
+
+#result-popup > img {
+  width: 600px;
+  border-radius: 8px;
+  content: url(./images/popup.png);
+}
+
+#result-popup > h1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#result-popup.open {
+  display: block;
+  animation: open 0.5s forwards;
+}
+
+#result-popup.close {
+  animation: close 0.5s forwards;
+}
+
+@keyframes open {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  95% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+@keyframes close {
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  5% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
