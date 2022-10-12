@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+.overlay {
+  display: flex;
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .overlay {
+    flex-direction: column;
+  }
+}
+.overlay__view {
+  width: 175px;
+  height: 100vh;
+  background-image: linear-gradient(146.25deg, #5b5b5b 11.59%, #000000 90.48%);
+  transition: width 0.3s ease-in-out;
+}
+@media only screen and (min-width: 1025px) {
+  .overlay__view {
+    width: 270px;
+    height: 100vh;
+  }
+}
+.overlay__view--closed {
+  width: 0;
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .overlay__view {
+    background-image: none;
+    background-color: #282828;
+    width: 100vw;
+    height: 50px;
+    transition: height 0.3s ease-in-out;
+  }
+  .overlay__view--closed {
+    width: 100vw;
+    height: 0;
+  }
+}
+.overlay__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1d1d1d;
+  width: 40px;
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .overlay__nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 40px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .overlay__nav {
+    width: 50px;
+    height: 100vh;
+  }
+}
+.overlay__nav__collapse {
+  margin-top: 2.5em;
+  transition: transform 0.3s ease-in-out;
+}
+.overlay__nav__collapse:hover {
+  cursor: pointer;
+}
+.overlay__nav__collapse--closed {
+  transform: rotate(180deg);
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .overlay__nav__collapse {
+    transform: rotate(90deg);
+    margin-top: 0;
+    margin-right: 10px;
+  }
+  .overlay__nav__collapse--closed {
+    transform: rotate(270deg);
+  }
+}/*# sourceMappingURL=main.css.map */
