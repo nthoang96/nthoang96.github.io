@@ -22,7 +22,6 @@
   width: 175px;
   height: 100vh;
   background-image: linear-gradient(146.25deg, #5b5b5b 11.59%, #000000 90.48%);
-  transition: width 0.3s ease-in-out;
 }
 @media only screen and (min-width: 1025px) {
   .overlay__view {
@@ -30,9 +29,91 @@
     height: 100vh;
   }
 }
+.overlay__view--opened {
+  -webkit-animation: others-left-to-right 0.3s ease-in-out forwards;
+          animation: others-left-to-right 0.3s ease-in-out forwards;
+}
+@-webkit-keyframes others-left-to-right {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 175px;
+  }
+}
+@keyframes others-left-to-right {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 175px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .overlay__view--opened {
+    -webkit-animation: desktop-left-to-right 0.3s ease-in-out forwards;
+            animation: desktop-left-to-right 0.3s ease-in-out forwards;
+  }
+  @-webkit-keyframes desktop-left-to-right {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 270px;
+    }
+  }
+  @keyframes desktop-left-to-right {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 270px;
+    }
+  }
+}
 .overlay__view--closed {
   width: 0;
   height: 100vh;
+  -webkit-animation: others-right-to-left 0.3s ease-in-out forwards;
+          animation: others-right-to-left 0.3s ease-in-out forwards;
+}
+@-webkit-keyframes others-right-to-left {
+  from {
+    width: 175px;
+  }
+  to {
+    width: 0px;
+  }
+}
+@keyframes others-right-to-left {
+  from {
+    width: 175px;
+  }
+  to {
+    width: 0px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .overlay__view--closed {
+    -webkit-animation: desktop-right-to-left 0.3s ease-in-out forwards;
+            animation: desktop-right-to-left 0.3s ease-in-out forwards;
+  }
+  @-webkit-keyframes desktop-right-to-left {
+    from {
+      width: 270px;
+    }
+    to {
+      width: 0px;
+    }
+  }
+  @keyframes desktop-right-to-left {
+    from {
+      width: 270px;
+    }
+    to {
+      width: 0px;
+    }
+  }
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .overlay__view {
@@ -40,11 +121,48 @@
     background-color: #282828;
     width: 100vw;
     height: 50px;
-    transition: height 0.3s ease-in-out;
+  }
+  .overlay__view--opened {
+    -webkit-animation: top-to-bottom 0.3s ease-in-out forwards;
+            animation: top-to-bottom 0.3s ease-in-out forwards;
+  }
+  @-webkit-keyframes top-to-bottom {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 50px;
+    }
+  }
+  @keyframes top-to-bottom {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 50px;
+    }
   }
   .overlay__view--closed {
     width: 100vw;
     height: 0;
+    -webkit-animation: bottom-to-top 0.3s ease-in-out forwards;
+            animation: bottom-to-top 0.3s ease-in-out forwards;
+  }
+  @-webkit-keyframes bottom-to-top {
+    from {
+      height: 50px;
+    }
+    to {
+      height: 0px;
+    }
+  }
+  @keyframes bottom-to-top {
+    from {
+      height: 50px;
+    }
+    to {
+      height: 0px;
+    }
   }
 }
 .overlay__nav {

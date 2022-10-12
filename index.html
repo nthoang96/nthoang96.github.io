@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="overlay">
-      <div id="view" class="overlay__view"></div>
+      <div id="view" class="overlay__view overlay__view--opened"></div>
       <nav class="overlay__nav">
         <div class="overlay__nav__button"></div>
         <svg
@@ -51,9 +51,11 @@
       var view = document.getElementById("view");
       svg.addEventListener("click", function () {
         if (view.classList.contains("overlay__view--closed")) {
+          view.classList.add("overlay__view--opened");
           view.classList.remove("overlay__view--closed");
           svg.classList.remove("overlay__nav__collapse--closed");
         } else {
+          view.classList.remove("overlay__view--opened");
           view.classList.add("overlay__view--closed");
           svg.classList.add("overlay__nav__collapse--closed");
         }
