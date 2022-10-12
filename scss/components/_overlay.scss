@@ -1,31 +1,5 @@
 @use "../abstracts" as *;
 
-@mixin left-to-right($device, $width) {
-  animation: #{$device}-left-to-right 0.3s ease-in-out forwards;
-
-  @keyframes #{$device}-left-to-right {
-    from {
-      width: 0px;
-    }
-    to {
-      width: $width;
-    }
-  }
-}
-
-@mixin right-to-left($device, $width) {
-  animation: #{$device}-right-to-left 0.3s ease-in-out forwards;
-
-  @keyframes #{$device}-right-to-left {
-    from {
-      width: $width;
-    }
-    to {
-      width: 0px;
-    }
-  }
-}
-
 .overlay {
   display: flex;
 
@@ -47,23 +21,9 @@
       height: 100vh;
     }
 
-    &--opened {
-      @include left-to-right(others, 175px);
-
-      @include desktop {
-        @include left-to-right(desktop, 270px);
-      }
-    }
-
     &--closed {
       width: 0;
       height: 100vh;
-
-      @include right-to-left(others, 175px);
-
-      @include desktop {
-        @include right-to-left(desktop, 270px);
-      }
     }
 
     @include portrait {
@@ -72,32 +32,9 @@
       width: 100vw;
       height: 50px;
 
-      &--opened {
-        animation: top-to-bottom 0.3s ease-in-out forwards;
-
-        @keyframes top-to-bottom {
-          from {
-            height: 0px;
-          }
-          to {
-            height: 50px;
-          }
-        }
-      }
-
       &--closed {
         width: 100vw;
         height: 0;
-        animation: bottom-to-top 0.3s ease-in-out forwards;
-
-        @keyframes bottom-to-top {
-          from {
-            height: 50px;
-          }
-          to {
-            height: 0px;
-          }
-        }
       }
     }
   }
@@ -126,7 +63,7 @@
 
     &__collapse {
       margin-top: 2.5em;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.1s ease-in-out;
 
       &:hover {
         cursor: pointer;
